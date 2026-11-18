@@ -1,0 +1,100 @@
++-------------+
+| TP Maquette |
+| 16/11/2026  |
+| BTS SIO B   |
+| VONG Sothy  |
++-------------+
+
++--------------------------------------------------------------------------------------------------------------------------+
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ EXERCICE 1 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
++--------------------------------------------------------------------------------------------------------------------------+
+|					       									           |
+| 1. Quelle différence visuelle y a-t-il entre margin et padding ?						           |
+|    - Le margin correspond à la marge externe c'est à dire l'espace situé à l'extérieur de la bordure de l'élément. 	   |
+|      Il sépare les éléments entre eux et laisse apparaître l'arrière-plan de l'élément parent. 			   |
+|    - Le padding correspond à la marge interne c'est à dire l'espace situé à l'intérieur de la bordure, entre le contenu  |
+|      et la bordure. 													   |
+|      Il prend la couleur de fond de l'élément lui-même.		        					   |
+| 					       									           |
+| 2. Pourquoi utilise-t-on une classe plutôt que d’écrire trois fois le même code ?				           |
+|    - Si on doit modifier la taille de la police, la couleur de la bordure ou le rayon des arrondis, on ne modifie 	   |
+|      qu'une seule règle CSS, ce qui modifie les trois paragraphes.	        					   |
+| 					       									           |
+| 3. Quelle est la différence entre une dimension en px et une dimension en % ?				        	   |
+|    - Le pixel est une unité absolue et fixe : un bloc de 160px fera exactement 160 pixels de haut quel que soit 	   |
+|      l'écran ou la taille de la fenêtre.									           |
+|    - Le pourcentage est une unité relative : une largeur de 88% signifie que le bloc occupera 88% de la largeur 	   |
+|      disponible de son conteneur parent. Si la fenêtre s'élargit ou se rétrécit, le bloc s'adapte.			   |
+| 															   |
++--------------------------------------------------------------------------------------------------------------------------+
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ OBSERVATIONS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
++--------------------------------------------------------------------------------------------------------------------------+
+|															   |
+| Observations lors du redimensionnement de la fenêtre :						         	   |
+|    - Lorsque la fenêtre est agrandie ou rétrécie, les largeurs définies en % s'étirent ou se contractent pour conserver  |
+|      leur proportion visuelle. En revanche, les hauteurs et les marges définies en px restent fixes.			   |
+| 						         								   |
++--------------------------------------------------------------------------------------------------------------------------+
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ EXERCICE 2 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
++--------------------------------------------------------------------------------------------------------------------------+
+| 					       									           |
+| 1. Qu’est-ce qui se passe si l’on retire clear: both du bloc image ?							   |
+|    - Si on retire clear: both, l'image essaie de se glisser dans l'espace libre laissé par les flotteurs qui sont plus   |
+|      haut. L'image se place aussi sous le titre ou entre les blocs selon l'espace restant.				   |
+| 					       									           |
+| 2. Quelle est la différence entre clear: left, clear: right et clear: both ?						   |
+|    Dans quel cas clear: both est-il le plus sûr ?									   |						
+|    - clear: left empêche les éléments flottant à gauche de se trouver à côté du bloc.					   |
+|    - clear: right empêche les éléments flottant à droite de se trouver à côté du bloc.				   |
+|    - clear: both empêche tout élément flottant d'être adjacent.							   |
+|    - clear: both est le plus sûr car il garantit que le bloc sera toujours sous tous les éléments flottants précédents.  |
+| 					       									           |
+| 3. Pourquoi la hauteur d’un conteneur « s’effondre-t-elle » quand tous ses enfants sont en float ?	           	   |
+|    - Les éléments en float sont retirés du flux normal, donc le conteneur parent ne prend plus en compte leur hauteur.   |
+|      Si le conteneur n'a pas de hauteur fixe ni d'élément non-flottant, sa hauteur calculée retombe à 0px.		   |
+| 					       									           |
+| 4. Citez deux inconvénients de float pour la mise en page. Quelle technique moderne la remplace ?			   |
+|    - Deux inconvénients :												   |
+|      1) L'obligation d'ajouter des balises de clear. 					  				   |
+|      2) L'impossibilité d'égaliser facilement la hauteur des colonnes ou de centrer le contenu.			   |
+|    - La technique moderne de remplacement est Flexbox pour les mises en page à 1 dimension et CSS Grid pour les mises    |
+|      en page complexes en 2 dimensions.		  								   |
++--------------------------------------------------------------------------------------------------------------------------+
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ OBSERVATIONS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
++--------------------------------------------------------------------------------------------------------------------------+
+|															   |
+| Observations lors de la réduction de la fenêtre :									   |
+|    - Lorsque la largeur de la fenêtre passe en dessous de 800px (400px + 400px), le margin-left: calc(100% - 800px)	   |
+|      devient négatif ou il n'y a plus assez d'espace physique pour contenir les deux blocs de 400px sur la même ligne.   |
+|      Le Bloc 2 passe sous le Bloc 1. 											   |
+| 					       									           |
++--------------------------------------------------------------------------------------------------------------------------+
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ EXERCICE 3 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
++--------------------------------------------------------------------------------------------------------------------------+
+| 					       									           |
+| 1. Pourquoi utilise-t-on Flexbox plutôt que float pour ces 3 colonnes ?					       	   |
+|    - Flexbox étire automatiquement les 3 colonnes pour qu'elles aient la même hauteur, alors qu'avec float, chaque  	   |
+|         colonne garde la hauteur de son propre contenu, créant des décalages visuels.					   |
+|    - Flexbox gère l'espace entre les colonnes avec gap, le centrage vertical avec align-items et la répartition 	   |
+|      horizontale avec justify-content, float demande des calculs complexes de marges et de pourcentages.		   |
+| 					       									           |
+| 2. Sur quel élément écrit-on display: flex : le conteneur ou les cartes ? Que se passe-t-il si on se trompe ?		   |
+|    - On écrit display: flex sur le conteneur parent.			  						   |
+|    - Si on l'écrit par erreur sur les cartes, les boîtes internes des cartes deviendront des éléments flexibles, mais    |
+|      les trois cartes entre elles continueront de s'empiler verticalement dans le flux normal au lieu de se placer côte  |
+|      à côte en colonnes.							  					   |
+| 					       									           |
+| 3. À quoi servent les balises <header>, <main> et <footer> par rapport à de simples <div> ?				   |
+|    - Contrairement aux balises <div>, qui sont des conteneurs génériques, <header>, <main> et <footer> sont des balises  |
+|      sémantiques qui décrivent le rôle du contenu placé à l'intérieur. :						   |
+|      - <header> : Définit l'en-tête d'une page.									   |
+|      - <main> : Encadre le contenu principal.										   |
+|      - <footer> : Désigne le pied de page, contient les mentions légales, coordonnées, liens secondaires, copyright.	   |
+| 					       									           |
+| 4. Comment avez-vous obtenu des cartes de même hauteur sans fixer de height ?						   |
+|    - En définissant display: flex sur le conteneur <main>, la valeur par défaut de align-items est stretch. Elle étire   |
+|      tous les enfants flexibles sur l'axe transversal pour qu'ils aient tous exactement la hauteur du plus grand.	   |
+|    - À l'intérieur de chaque carte, on applique flex: 1 sur le bloc de contenu, ce qui lui permet d'occuper tout 	   |
+|      l'espace vertical disponible.  											   |
+|					       									           |
++--------------------------------------------------------------------------------------------------------------------------+
