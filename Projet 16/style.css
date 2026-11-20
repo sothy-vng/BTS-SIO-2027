@@ -1,0 +1,12 @@
+header {
+    text-align: center;
+}
+
+body {
+    background-color: pink;
+    color: black;
+}
+
+table {
+    border: 1px solid black;
+}
